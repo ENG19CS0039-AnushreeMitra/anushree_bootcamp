@@ -1,7 +1,8 @@
 #include<stdio.h>
-void main()
+int main()
 {
 	printf("Anushree Mitra\n");
+	return(0);
 }
-// no changes
-//added '\n' in printf
+
+
