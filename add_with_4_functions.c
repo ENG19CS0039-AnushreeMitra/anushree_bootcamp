@@ -9,8 +9,8 @@ printf("Enter the first number: ");
 
 int n2()
 {
-int b;
-printf("Enter the second number: ");
+    int b;
+    printf("Enter the second number: ");
 	scanf("%d", &b);
 	return b;
 }
