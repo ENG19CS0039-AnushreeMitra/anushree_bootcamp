@@ -13,10 +13,11 @@ float volume(int h, int b, int d)
 	vol = (x+y)*1/3;
 	return vol;
 }
-void disp(int v)
+void disp()
 {
+	float v;
 	v = volume(h,b,d);
-printf("The volume of the given troboloid with h: %d, b: %d and d: %d is %f", h,b,d,v);
+    printf("The volume of the given troboloid with h: %d, b: %d and d: %d is %f cube units\n", h,b,d,v);
 }
 int main()
 {
