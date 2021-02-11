@@ -5,7 +5,7 @@ struct frac
 };
 int main()
 {
-	struct fract x[100];
+	struct frac x[100];
 	int n, i,gcd, nsum= 0, dval= 1;
 	printf("Enter the value of 'n': ");
 	scanf("%d", &n);
@@ -16,9 +16,11 @@ int main()
 		printf("Enter the denominator of fraction %d: ", i+1);
 		scanf("%d", &x[i].denom);
 		printf("The entered fraction is %d/%d\n", x[i].num, x[i].denom);
-		nsum += x[i].num;
 		dval *= x[i].denom;
 	}
+	
+	for(i=0; i<n; i++)
+	    nsum += (x[i].num*dval)/x[i].denom;
 	//for gcd:
 	for(i=1; i<=nsum && i<=dval; i++)
 	{
