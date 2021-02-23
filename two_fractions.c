@@ -1,30 +1,46 @@
 #include<stdio.h>
+void disp(int, int);
 struct fract
 { 	int num, denom;
 };
-
-int main()
+typedef struct fract fr;
+fr input()
 {
-	struct fract o,t;
-    int x, y, gcd;
-   	printf("Enter numerator for 1st fraction: ");
-	scanf("%d", &o.num);
-	printf("Enter denominator for 1st fraction: ");
-	scanf("%d", &o.denom);
-	printf("The first fraction you entered is: %d / %d\n",o.num,o.denom);
-   	printf("Enter numerator for 2nd fraction: ");
-	scanf("%d", &t.num);
-	printf("Enter denominator for 2nd fraction: ");
-	scanf("%d", &t.denom);
-	printf("The second fraction you entered is: %d / %d\n",t.num,t.denom);
-	x = (o.num*t.denom) + (t.num*o.denom); //cross multiply 
-	y = o.denom*t.denom;
+	fr x;
+	printf("Enter numerator of the fraction: ");
+	scanf("%d", &x.num);
+	printf("Enter denominator of the fraction: ");
+	scanf("%d", &x.denom);
+	printf("The entered fraction is: %d/%d\n",x.num,x.denom);
+	return (x);
+}
+
+int sumf(int a, int b, int c, int d)
+{
+    int i, x, y, gcd, sum;
+    x = (a*d) + (c*b); //cross multiply 
+	y = b*d;
 	for(int i=1; i<=x && i<=y; i++)
 	{
 		if((x%i==0)&&(y%i == 0))
 			gcd = i;
 	}
 	x = x/gcd; y = y/gcd;
-	printf("Sum of the given two fractions is: %d/%d\n", x,y);
+	disp(x,y);
+}
+void disp(int x, int y)
+{
+    printf("The sum of entered fractions is %d/%d",x,y);
+}
+
+int main()
+{
+	fr o,t;
+	int sum;
+	printf("FRACTION 1 -\n");
+    	o = input();
+   	printf("FRACTION 2 -\n");
+	t = input();
+	sum = sumf(o.num, o.denom, t.num, t.denom);
 	return 0;
 }
